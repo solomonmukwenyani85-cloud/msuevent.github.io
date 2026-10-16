@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="MSU Connect - Interactive Multimedia University Event Finder">
+
+    <title>MSU Connect | University Event Finder</title>
+
+
+    <!-- ================================
+         GOOGLE FONTS
+    ================================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ================================
+         CSS MODULE
+    ================================= -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- ================================
+         P5.JS LIBRARY
+    ================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     SKIP LINK
+===================================== -->
+
+<a href="#main-content"
+   class="skip-link">
+
+    Skip to main content
+
+</a>
+
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="#home"
+           class="brand">
+
+            <span class="brand-logo">
+                MSU
+            </span>
+
+            <span>
+
+                <strong>
+                    MSU Connect
+                </strong>
+
+                <small>
+                    University Event Finder
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            id="menuToggle"
+            class="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <nav id="mainNav"
+             class="main-nav">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#media">
+                Multimedia
+            </a>
+
+            <a href="#planner">
+                My Planner
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================
+     MAIN
+===================================== -->
+
+<main id="main-content">
+
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section id="home"
+         class="hero">
+
+    <div class="container hero-grid">
+
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                MIDLANDS STATE UNIVERSITY
+            </p>
+
+
+            <h1>
+
+                Discover.
+                <span>
+                    Connect.
+                </span>
+                Participate.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                MSU Connect helps students discover
+                academic, sporting, cultural and social
+                events happening around campus.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#events"
+                   class="btn btn-primary">
+
+                    Explore Events
+
+                </a>
+
+
+                <a href="#media"
+                   class="btn btn-outline">
+
+                    Explore Multimedia
+
+                </a>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <strong id="eventCount">
+                        6
+                    </strong>
+
+                    <span>
+                        Events
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        4
+                    </strong>
+
+                    <span>
+                        Categories
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        7
+                    </strong>
+
+                    <span>
+                        Days
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- P5 VISUAL -->
+
+        <div class="p5-card">
+
+            <div class="p5-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CAMPUS ACTIVITY
+                    </p>
+
+                    <h2>
+                        Student Activity
+                    </h2>
+
+                </div>
+
+                <span class="live">
+                    ● LIVE
+                </span>
+
+            </div>
+
+
+            <div id="p5-container">
+
+            </div>
+
+
+            <p class="p5-caption">
+
+                Interactive visualisation created
+                using p5.js.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     EVENTS
+===================================== -->
+
+<section id="events"
+         class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p class="eyebrow">
+                EVENT FINDER
+            </p>
+
+            <h2>
+                Upcoming University Events
+            </h2>
+
+            <p>
+                Search and filter upcoming events
+                and save the ones you want to attend.
+            </p>
+
+        </div>
+
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+
+            <div class="form-group">
+
+                <label for="searchInput">
+                    Search
+                </label>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search events...">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="categoryFilter">
+                    Category
+                </label>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="academic">
+                        Academic
+                    </option>
+
+                    <option value="sports">
+                        Sports
+                    </option>
+
+                    <option value="culture">
+                        Culture
+                    </option>
+
+                    <option value="social">
+                        Social
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="dayFilter">
+                    Day
+                </label>
+
+                <select id="dayFilter">
+
+                    <option value="all">
+                        All Days
+                    </option>
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                    <option value="Saturday">
+                        Saturday
+                    </option>
+
+                    <option value="Sunday">
+                        Sunday
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="clearFilters"
+                class="btn btn-secondary">
+
+                Clear
+
+            </button>
+
+        </div>
+
+
+
+        <!-- EVENT GRID -->
+
+        <div id="eventGrid"
+             class="event-grid">
+
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div id="emptyState"
+             class="empty-state"
+             hidden>
+
+            <div class="empty-icon">
+                🔍
+            </div>
+
+            <h3>
+                No events found
+            </h3>
+
+            <p>
+                Try another search or filter.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MULTIMEDIA
+===================================== -->
+
+<section id="media"
+         class="section multimedia-section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p class="eyebrow">
+                MULTIMEDIA EXPERIENCE
+            </p>
+
+            <h2>
+                Explore the MSU Campus
+            </h2>
+
+            <p>
+                Experience the campus through
+                images, audio and video.
+            </p>
+
+        </div>
+
+
+
+        <div class="media-grid">
+
+
+            <!-- IMAGE -->
+
+            <article class="media-card">
+
+                <div class="media-label">
+                    IMAGE
+                </div>
+
+                <img
+                    src="msu.jpg"
+                    alt="Midlands State University campus"
+                    class="media-image">
+
+
+                <div class="media-content">
+
+                    <h3>
+                        Our Campus
+                    </h3>
+
+                    <p>
+
+                        Explore the university environment
+                        and facilities available to students.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- AUDIO -->
+
+            <article class="media-card">
+
+                <div class="media-label">
+                    AUDIO
+                </div>
+
+
+                <div class="audio-icon">
+                    🎧
+                </div>
+
+
+                <div class="media-content">
+
+                    <h3>
+                        Campus Welcome
+                    </h3>
+
+                    <p>
+
+                        Listen to a short audio introduction
+                        to the MSU campus.
+
+                    </p>
+
+
+                    <audio
+                        controls
+                        class="audio-player">
+
+                        <source
+                            src="Busy Signal.mp3"
+                            type="audio/mpeg">
+
+                        Your browser does not support
+                        audio.
+
+                    </audio>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO -->
+
+            <article class="media-card video-card">
+
+                <div class="media-label">
+                    VIDEO
+                </div>
+
+
+                <video
+                    class="campus-video"
+                    controls
+                    poster="assets/images/campus.jpg">
+
+                    <source
+                        src="MSU Virtual Tour.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support
+                    HTML5 video.
+
+                </video>
+
+
+                <div class="media-content">
+
+                    <h3>
+                        Campus Tour
+                    </h3>
+
+                    <p>
+
+                        Watch a short multimedia tour
+                        introducing key areas of campus.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CAMPUS MAP
+===================================== -->
+
+<section class="section map-section">
+
+    <div class="container map-container">
+
+
+        <div class="map-text">
+
+            <p class="eyebrow">
+                CAMPUS GUIDE
+            </p>
+
+            <h2>
+                Find Important Campus Areas
+            </h2>
+
+            <p>
+
+                The campus guide provides a visual
+                representation of important student
+                facilities.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    📚 University Library
+                </li>
+
+                <li>
+                    ⚽ Sports Field
+                </li>
+
+                <li>
+                    💻 Computer Laboratories
+                </li>
+
+                <li>
+                    🎭 Amphitheatre
+                </li>
+
+                <li>
+                    🏫 Lecture Theatres
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="map-image">
+
+            <img
+                src="campus.jpg"
+                alt="Campus guide">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PLANNER
+===================================== -->
+
+<section id="planner"
+         class="section planner-section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p class="eyebrow">
+                MY EVENTS
+            </p>
+
+            <h2>
+                Personal Event Planner
+            </h2>
+
+            <p>
+                Events you save will appear here.
+            </p>
+
+        </div>
+
+
+        <div id="plannerList"
+             class="planner-list">
+
+        </div>
+
+
+        <div id="plannerEmpty"
+             class="empty-state">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>
+                No saved events
+            </h3>
+
+            <p>
+                Save an event to add it to your planner.
+            </p>
+
+            <a href="#events"
+               class="btn btn-primary">
+
+                Browse Events
+
+            </a>
+
+        </div>
+
+
+        <div class="planner-footer">
+
+            <span>
+                Saved events:
+                <strong id="plannerCount">
+                    0
+                </strong>
+            </span>
+
+
+            <button
+                id="clearPlanner"
+                class="btn btn-secondary">
+
+                Clear Planner
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+
+<section id="about"
+         class="section about-section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p class="eyebrow">
+                ABOUT THE APPLICATION
+            </p>
+
+            <h2>
+                Built for University Students
+            </h2>
+
+            <p>
+
+                MSU Connect demonstrates the use of
+                HTML5, CSS3, JavaScript, multimedia
+                and p5.js in developing an interactive
+                web application.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Find events quickly using search
+                    and filtering tools.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Save
+                </h3>
+
+                <p>
+                    Save important events to your
+                    personal event planner.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Experience
+                </h3>
+
+                <p>
+                    Experience images, audio, video
+                    and interactive graphics.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+                    Responsive
+                </h3>
+
+                <p>
+                    Use the application on desktop,
+                    tablet or mobile devices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="brand">
+
+                <span class="brand-logo">
+                    MSU
+                </span>
+
+                <span>
+
+                    <strong>
+                        MSU Connect
+                    </strong>
+
+                    <small>
+                        University Event Finder
+                    </small>
+
+                </span>
+
+            </div>
+
+
+            <p>
+
+                An interactive multimedia university
+                event application developed for DSI236.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Navigation
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#media">
+                Multimedia
+            </a>
+
+            <a href="#planner">
+                Planner
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Technologies
+            </h3>
+
+            <p>
+                HTML5
+            </p>
+
+            <p>
+                CSS3
+            </p>
+
+            <p>
+                JavaScript
+            </p>
+
+            <p>
+                p5.js
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 MSU Connect | DSI236
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================
+     EVENT MODAL
+===================================== -->
+
+<div id="eventModal"
+     class="modal"
+     aria-hidden="true">
+
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-box">
+
+
+        <button
+            id="modalClose"
+            class="modal-close">
+
+            ×
+
+        </button>
+
+
+        <img
+            id="modalImage"
+            class="modal-event-image"
+            src=""
+            alt="">
+
+
+        <div class="modal-content">
+
+            <span id="modalCategory"
+                  class="event-category">
+
+            </span>
+
+
+            <h2 id="modalTitle">
+            </h2>
+
+
+            <div class="modal-details">
+
+                <p id="modalDate">
+                </p>
+
+                <p id="modalTime">
+                </p>
+
+                <p id="modalVenue">
+                </p>
+
+            </div>
+
+
+            <p id="modalDescription">
+            </p>
+
+
+            <button
+                id="modalSave"
+                class="btn btn-primary">
+
+                Save to Planner
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     TOAST
+===================================== -->
+
+<div id="toast"
+     class="toast">
+
+</div>
+
+
+
+<!-- =====================================
+     JAVASCRIPT MODULE
+===================================== -->
+
+<script src="js/app.js"></script>
+
+
+<!-- =====================================
+     P5.JS MODULE
+===================================== -->
+
+<script src="p5/sketch.js"></script>
+
+
+</body>
+
+</html>
